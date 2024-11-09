@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class HospitalManagementSystem {
     private static final String url = "jdbc:mysql://localhost:3306/hospital";
-    private static final String username = "root";
-    private static final String password = "R1shabh_s1ngh";
+    private static  String username; //= "root";
+    private static  String password; //= "R1shabh_s1ngh";
 
     public static void main(String[] args) {
         try{
@@ -15,7 +15,13 @@ public class HospitalManagementSystem {
             e.printStackTrace();
         }
         Scanner scanner = new Scanner(System.in);
+        
+        
         try{
+            System.out.print("  Enter your username: ");
+            username = scanner.nextLine();
+            System.out.print("  Enter your password: ");
+            password = scanner.nextLine();
             Connection connection = DriverManager.getConnection(url, username, password);
             Patient patient = new Patient(connection,scanner);
             Doctor doctor = new Doctor(connection);
