@@ -56,6 +56,8 @@ public class HospitalManagementSystem {
                     case 5:
                         //Exit
                         System.out.println("  CODE BY RISHABH...");
+                        connection.close();
+                        scanner.close();
                         return;            
                     default:
                         System.out.println("  Enter valid choice!!!");
